@@ -7,15 +7,19 @@ public class Circle extends JComponent {
 private Board b;
 // Board of 6 array lists (down) of array lists of 7 (across)
 private boolean occupied;
-// True: RED
-// False: YELLOW
-private boolean color;
+// 0: RED
+// 1: YELLOW
+// 2: BLANK
+private int color;
 //use coordinates of occupied pieces to use queen chess logic to check for 4 in a row
 private int xNum; //x-coordinaters //y-coordinaters
 private int yNum;
 
-public Circle(boolean o, boolean color, int x, int y){
-   
+public Circle(boolean o, int col, int x, int y){
+   boolean occupied= o;
+   int color = col;
+   boolean xNum = x;
+   boolean yNum = y;
 }
 
 
@@ -24,7 +28,7 @@ public Circle(boolean o, boolean color, int x, int y){
  }   
  
  public void setOccupied() {
- occupied=b;  
+   occupied=b;  
  }
  
  public boolean getColor(){
@@ -34,13 +38,16 @@ public Circle(boolean o, boolean color, int x, int y){
     color = col;
  }
  public int getX(){
-    return intX;
+    return xNum;
  }
- public void setX(){
-    
+ public void setX(int x){
+    xNum=x;
  }
  public int getY(){
-    return intY;
+    return yNum;
+ }
+ public void setY(int y){
+    yNum=y;
  }
  public void put(Piece p) {
     this.occupyingPiece = p;
