@@ -18,8 +18,8 @@ private int yNum;
 public Circle(boolean o, int col, int x, int y){
    boolean occupied= o;
    int color = col;
-   boolean xNum = x;
-   boolean yNum = y;
+   int xNum = x;
+   int yNum = y;
 }
 
 
@@ -27,14 +27,14 @@ public Circle(boolean o, int col, int x, int y){
     return occupied;
  }   
  
- public void setOccupied() {
+ public void setOccupied(boolean b) {
    occupied=b;  
  }
  
- public boolean getColor(){
+ public int getColor(){
     return color;
  }
- public void setColor(boolean col){
+ public void setColor(int col){
     color = col;
  }
  public int getX(){
@@ -49,7 +49,5 @@ public Circle(boolean o, int col, int x, int y){
  public void setY(int y){
     yNum=y;
  }
- public void put(Piece p) {
-    this.occupyingPiece = p;
-}
+
 }
